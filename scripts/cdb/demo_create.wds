@@ -1,0 +1,2 @@
+.printf "SC| NtCreateFile          %msu\n", poi(@r8+0x10)
+gc

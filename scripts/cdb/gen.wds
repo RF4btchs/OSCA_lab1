@@ -1,0 +1,3 @@
+.printf "SC|%x|%y|\n", @$tid, @rip
+bp /1 /t @$thread @$ra "$$<@@DIR@@/ret.wds"
+gc

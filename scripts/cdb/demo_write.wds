@@ -1,0 +1,2 @@
+.printf "SC| NtWriteFile           h=%p len=%d\n", @rcx, dwo(@rsp+0x38)
+gc

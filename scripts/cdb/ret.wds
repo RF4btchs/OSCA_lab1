@@ -1,0 +1,2 @@
+.printf "RET|%x|%x\n", @$tid, @eax
+gc

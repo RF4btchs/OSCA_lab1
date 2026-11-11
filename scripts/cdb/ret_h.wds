@@ -1,0 +1,2 @@
+.printf "RET|%x|%x|h=%p\n", @$tid, @eax, poi(@$t0)
+gc

@@ -1,0 +1,4 @@
+.printf "SC|%x|%y|image=%msu;cmdline=%msu\n", @$tid, @rip, poi(@rsp+0x48)+0x60, poi(@rsp+0x48)+0x70
+r $t0 = @rcx
+bp /1 /t @$thread @$ra "$$<@@DIR@@/ret_h.wds"
+gc

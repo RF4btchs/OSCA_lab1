@@ -1,0 +1,4 @@
+.printf "SC|%x|%y|root=%p;access=%x;share=%x;opts=%x;name=%msu\n", @$tid, @rip, poi(@r8+8), @edx, dwo(@rsp+0x28), dwo(@rsp+0x30), poi(@r8+0x10)
+r $t0 = @rcx
+bp /1 /t @$thread @$ra "$$<@@DIR@@/ret_h.wds"
+gc

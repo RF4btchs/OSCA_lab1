@@ -1,0 +1,3 @@
+.if (poi(@rcx+0x10) != 0) { .printf "SC|%x|%y|root=%p;name=%msu\n", @$tid, @rip, poi(@rcx+8), poi(@rcx+0x10) } .else { .printf "SC|%x|%y|root=%p;name=\n", @$tid, @rip, poi(@rcx+8) }
+bp /1 /t @$thread @$ra "$$<@@DIR@@/ret.wds"
+gc

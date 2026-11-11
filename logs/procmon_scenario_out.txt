@@ -1,0 +1,6 @@
+LAB_VAR=lab1
+Hello from cmd.exe
+second line
+a.txt
+c.txt
+the-death-star

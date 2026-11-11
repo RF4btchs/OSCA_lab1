@@ -1,0 +1,2 @@
+.printf "SC| NtCreateUserProcess   %msu\n", poi(@rsp+0x48)+0x70
+gc

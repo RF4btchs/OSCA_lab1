@@ -1,0 +1,444 @@
+﻿
+************* Preparing the environment for Debugger Extensions Gallery repositories **************
+   ExtensionRepository : Implicit
+   UseExperimentalFeatureForNugetShare : true
+   AllowNugetExeUpdate : true
+   NonInteractiveNuget : true
+   AllowNugetMSCredentialProviderInstall : true
+   AllowParallelInitializationOfLocalRepositories : true
+
+   -- Configuring repositories
+      ----> Repository : LocalInstalled, Enabled: true
+      ----> Repository : UserExtensions, Enabled: true
+
+>>>>>>>>>>>>> Preparing the environment for Debugger Extensions Gallery repositories completed, duration 0.000 seconds
+
+************* Waiting for Debugger Extensions Gallery to Initialize **************
+
+>>>>>>>>>>>>> Waiting for Debugger Extensions Gallery to Initialize completed, duration 0.031 seconds
+   ----> Repository : UserExtensions, Enabled: true, Packages count: 0
+   ----> Repository : LocalInstalled, Enabled: true, Packages count: 46
+
+Microsoft (R) Windows Debugger Version 10.0.29680.1004 AMD64
+Copyright (c) Microsoft Corporation. All rights reserved.
+
+*** wait with pending attach
+
+************* Path validation summary **************
+Response                         Time (ms)     Location
+Deferred                                       srv*C:\Users\sokol\AppData\Local\Temp\symcache*https://msdl.microsoft.com/download/symbols
+
+************* Path validation summary **************
+Response                         Time (ms)     Location
+Deferred                                       srv*C:\Users\sokol\AppData\Local\Temp\symcache*https://msdl.microsoft.com/download/symbols
+Symbol search path is: srv*C:\Users\sokol\AppData\Local\Temp\symcache*https://msdl.microsoft.com/download/symbols
+Executable search path is: 
+WARNING: Process 21140 is not attached as a debuggee
+         The process can be examined but debug events will not be received
+..........
+(5294.70d8): Wake debugger - code 80000007 (first chance)
+
++------------------------------------------------------------------------+
+| This target supports Hardware-enforced Stack Protection. A HW based    |
+| "Shadow Stack" may be available to assist in debugging and analysis.   |
+| See aka.ms/userhsp for more info.                                      |
+|                                                                        |
+| dps @ssp                                                               |
+|                                                                        |
++------------------------------------------------------------------------+
+
+ntdll!NtWaitForSingleObject+0x14:
+00007ffa`fb961dd4 c3              ret
+0:000> cdb: Reading initial command '.echo ===== lm (modules); lm; .echo ===== ~*k (threads); ~*k; .echo ===== !peb; !peb; .echo ===== !handle 0 1; !handle 0 1; .echo ===== !handle 0 f File; !handle 0 f File; qd'
+===== lm (modules)
+start             end                 module name
+00007ff6`1fe20000 00007ff6`1fe8f000   cmd        (deferred)             
+00007ffa`f8010000 00007ffa`f8091000   Wldp       (deferred)             
+00007ffa`f8b20000 00007ffa`f8bc3000   msvcp_win   (deferred)             
+00007ffa`f8d20000 00007ffa`f8e6c000   ucrtbase   (deferred)             
+00007ffa`f8e80000 00007ffa`f9281000   KERNELBASE   (pdb symbols)          c:\users\sokol\appdata\local\temp\symcache\kernelbase.pdb\79B505276F140450EB83DF0440BF06C61\kernelbase.pdb
+00007ffa`f95e0000 00007ffa`f96ab000   KERNEL32   (deferred)             
+00007ffa`f96b0000 00007ffa`f9a3b000   combase    (deferred)             
+00007ffa`fa420000 00007ffa`fa4c8000   sechost    (deferred)             
+00007ffa`fae60000 00007ffa`faf78000   RPCRT4     (deferred)             
+00007ffa`fb800000 00007ffa`fba68000   ntdll      (pdb symbols)          c:\users\sokol\appdata\local\temp\symcache\ntdll.pdb\C031D45B0DA18A6E74D06ED6AB2DD9E11\ntdll.pdb
+===== ~*k (threads)
+
+.  0  Id: 5294.70d8 Suspend: 1 Teb: 000000cc`dd63e000 Unfrozen
+Child-SP          RetAddr               Call Site
+000000cc`dd8fecf8 00007ffa`f8e9be9f     ntdll!NtWaitForSingleObject+0x14
+000000cc`dd8fed00 00007ff6`1fe2fb36     KERNELBASE!WaitForSingleObjectEx+0xaf
+000000cc`dd8feda0 00007ff6`1fe43efb     cmd!WaitProcAndCloseHandle+0x1e
+000000cc`dd8fedd0 00007ff6`1fe2f160     cmd!ExecPgm+0x7cb
+000000cc`dd8ff080 00007ff6`1fe28d62     cmd!ECWork+0xac
+000000cc`dd8ff320 00007ff6`1fe2ebb3     cmd!FindFixAndRun+0x2b2
+000000cc`dd8ff7c0 00007ff6`1fe2eb08     cmd!Dispatch+0x163
+000000cc`dd8ff860 00007ff6`1fe2eb08     cmd!Dispatch+0xb8
+000000cc`dd8ff900 00007ff6`1fe53a01     cmd!Dispatch+0xb8
+000000cc`dd8ff9a0 00007ff6`1fe47b0b     cmd!main+0x1a9
+000000cc`dd8ffa20 00007ffa`f960dda7     cmd!__scrt_common_main_seh+0x10b
+000000cc`dd8ffa60 00007ffa`fb87ee4c     KERNEL32!BaseThreadInitThunk+0x17
+000000cc`dd8ffa90 00000000`00000000     ntdll!RtlUserThreadStart+0x2c
+
+   1  Id: 5294.5328 Suspend: 1 Teb: 000000cc`dd640000 Unfrozen
+Child-SP          RetAddr               Call Site
+000000cc`dd9ff6c8 00007ffa`fb824d0e     ntdll!NtWaitForWorkViaWorkerFactory+0x14
+000000cc`dd9ff6d0 00007ffa`f960dda7     ntdll!TppWorkerThread+0x37e
+000000cc`dd9ffa30 00007ffa`fb87ee4c     KERNEL32!BaseThreadInitThunk+0x17
+000000cc`dd9ffa60 00000000`00000000     ntdll!RtlUserThreadStart+0x2c
+
+   2  Id: 5294.5d2c Suspend: 1 Teb: 000000cc`dd642000 Unfrozen
+Child-SP          RetAddr               Call Site
+000000cc`ddaff5c8 00007ffa`fb824d0e     ntdll!NtWaitForWorkViaWorkerFactory+0x14
+000000cc`ddaff5d0 00007ffa`f960dda7     ntdll!TppWorkerThread+0x37e
+000000cc`ddaff930 00007ffa`fb87ee4c     KERNEL32!BaseThreadInitThunk+0x17
+000000cc`ddaff960 00000000`00000000     ntdll!RtlUserThreadStart+0x2c
+
+   3  Id: 5294.1884 Suspend: 1 Teb: 000000cc`dd644000 Unfrozen
+Child-SP          RetAddr               Call Site
+000000cc`ddbffaa8 00007ffa`fb824d0e     ntdll!NtWaitForWorkViaWorkerFactory+0x14
+000000cc`ddbffab0 00007ffa`f960dda7     ntdll!TppWorkerThread+0x37e
+000000cc`ddbffe10 00007ffa`fb87ee4c     KERNEL32!BaseThreadInitThunk+0x17
+000000cc`ddbffe40 00000000`00000000     ntdll!RtlUserThreadStart+0x2c
+===== !peb
+PEB at 000000ccdd63d000
+    InheritedAddressSpace:    No
+    ReadImageFileExecOptions: No
+    BeingDebugged:            No
+    ImageBaseAddress:         00007ff61fe20000
+    NtGlobalFlag:             0
+    NtGlobalFlag2:            0
+    Ldr                       00007ffafb9d38e0
+    Ldr.Initialized:          Yes
+    Ldr.InInitializationOrderModuleList: 0000024f647e4330 . 0000024f647e3210
+    Ldr.InLoadOrderModuleList:           0000024f647e44b0 . 0000024f647e31f0
+    Ldr.InMemoryOrderModuleList:         0000024f647e44c0 . 0000024f647e3200
+                    Base TimeStamp                     Module
+            7ff61fe20000 4cd63f45 Nov 07 08:55:17 2010 C:\WINDOWS\System32\cmd.exe
+            7ffafb800000 5fd39a05 Dec 11 19:10:45 2020 C:\WINDOWS\SYSTEM32\ntdll.dll
+            7ffaf95e0000 06fd28ce Sep 19 05:39:10 1973 C:\WINDOWS\System32\KERNEL32.DLL
+            7ffaf8e80000 fb9071fb Sep 30 01:19:39 2103 C:\WINDOWS\System32\KERNELBASE.dll
+            7ffaf8d20000 3f426c5b Aug 19 21:28:43 2003 C:\WINDOWS\System32\ucrtbase.dll
+            7ffaf8010000 07a2e9ef Jan 22 23:07:11 1974 C:\WINDOWS\System32\Wldp.dll
+            7ffaf8b20000 ec24e540 Jul 18 18:22:40 2095 C:\WINDOWS\System32\msvcp_win.dll
+            7ffaf96b0000 15b851a4 Jul 19 17:31:00 1981 C:\WINDOWS\System32\combase.dll
+            7ffafae60000 d22a3515 Sep 25 02:17:41 2081 C:\WINDOWS\System32\RPCRT4.dll
+            7ffafa420000 56ea9c0a Mar 17 14:59:06 2016 C:\WINDOWS\System32\sechost.dll
+    SubSystemData:     0000000000000000
+    ProcessHeap:       0000024f647e0000
+    ProcessParameters: 0000024f647e8b10
+    CurrentDirectory:  'C:\Users\sokol\AppData\Local\Temp\lab1_handles\'
+    WindowTitle:  'C:\WINDOWS\System32\cmd.exe'
+    ImageFile:    'C:\WINDOWS\System32\cmd.exe'
+    CommandLine:  '"C:\WINDOWS\System32\cmd.exe" /c "(echo held by cmd.exe & ping -n 9 127.0.0.1 >nul) > held.txt" '
+    DllPath:      '< Name not readable >'
+    Environment:  0000024f648300f0
+        =C:=C:\Users\sokol\AppData\Local\Temp\lab1_handles
+        AI_AGENT=claude-code_2-1-319_agent
+        ALLUSERSPROFILE=C:\ProgramData
+        APPDATA=C:\Users\sokol\AppData\Roaming
+        CHROME_CRASHPAD_PIPE_NAME=\\.\pipe\crashpad_5936_FZGFZUHGWZUPWNRD
+        CLAUDECODE=1
+        CLAUDE_CODE_CHILD_SESSION=1
+        CLAUDE_CODE_ENTRYPOINT=cli
+        CLAUDE_CODE_EXECPATH=C:\Users\sokol\.local\bin\claude.exe
+        CLAUDE_CODE_MESSAGING_SOCKET=\\.\pipe\LOCAL\cc-msg-9860c418a22981417e4579309176feaa
+        CLAUDE_CODE_MESSAGING_TOKEN=c38ada0f4c63c75b221ea41f75520172
+        CLAUDE_CODE_SESSION_ATTENDED=1
+        CLAUDE_CODE_SESSION_ID=d6857bab-84c9-49fc-82a3-e6e12b459d44
+        CLAUDE_CODE_SSE_PORT=50892
+        CLAUDE_EFFORT=medium
+        CLAUDE_PID=17540
+        COLORTERM=truecolor
+        COMMONPROGRAMFILES=C:\Program Files\Common Files
+        COMPUTERNAME=THE-DEATH-STAR
+        COMSPEC=C:\WINDOWS\system32\cmd.exe
+        COPILOT_DEBUG_NONCE=41c3bfda81090b687c97608c6e9b9da1
+        COREPACK_ENABLE_AUTO_PIN=0
+        ChocolateyInstall=C:\ProgramData\chocolatey
+        ChocolateyLastPathUpdate=134189136365960801
+        CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files
+        CommonProgramW6432=C:\Program Files\Common Files
+        DriverData=C:\Windows\System32\Drivers\DriverData
+        EFC_12748_1262719628=1
+        EFC_12748_1592913036=1
+        EFC_12748_2283032206=1
+        EFC_12748_3789132940=1
+        EFC_12748_4126798990=1
+        EXEPATH=C:\Program Files\Git\bin
+        GIT_ASKPASS=c:\Users\sokol\AppData\Roaming\Code\User\globalStorage\vscode.git\askpass\70789581cae28aa7\askpass.sh
+        GIT_EDITOR=true
+        HOME=C:\Users\sokol
+        HOMEDRIVE=C:
+        HOMEPATH=\Users\sokol
+        HTTPS_PROXY=http://127.0.0.1:10809
+        HTTP_PROXY=http://127.0.0.1:10809
+        LANG=en_US.UTF-8
+        LOCALAPPDATA=C:\Users\sokol\AppData\Local
+        LOGONSERVER=\\THE-DEATH-STAR
+        MCP_TIMEOUT=120000
+        MSYSTEM=MINGW64
+        NUMBER_OF_PROCESSORS=16
+        OLDPWD=C:/Users/sokol/OneDrive/╨рсюўшщ ёЄюы/my_progrmms/юёш 3 ёхь/lab1/scripts
+        OS=Windows_NT
+        OneDrive=C:\Users\sokol\OneDrive
+        OneDriveConsumer=C:\Users\sokol\OneDrive
+        PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem
+        PATHEXT=.COM;.EXE;.BAT;.CMD
+        PLINK_PROTOCOL=ssh
+        PROCESSOR_ARCHITECTURE=AMD64
+        PROCESSOR_IDENTIFIER=AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD
+        PROCESSOR_LEVEL=25
+        PROCESSOR_REVISION=5000
+        PROGRAMFILES=C:\Program Files
+        PROMPT=$P$G
+        PSExecutionPolicyPreference=Bypass
+        PSModulePath=C:\Users\sokol\OneDrive\─юъєьхэЄ√\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+        PUBLIC=C:\Users\Public
+        PWD=C:/Users/sokol/OneDrive/╨рсюўшщ ёЄюы/my_progrmms/юёш 3 ёхь/lab1
+        ProgramData=C:\ProgramData
+        ProgramFiles(x86)=C:\Program Files (x86)
+        ProgramW6432=C:\Program Files
+        SESSIONNAME=Console
+        SHELL=C:\Program Files\Git\bin\bash.exe
+        SHLVL=1
+        SYSTEMDRIVE=C:
+        SYSTEMROOT=C:\WINDOWS
+        TEMP=C:\Users\sokol\AppData\Local\Temp
+        TERM=xterm-256color
+        TERM_PROGRAM=vscode
+        TERM_PROGRAM_VERSION=1.145.2
+        TMP=C:\Users\sokol\AppData\Local\Temp
+        USERDOMAIN=THE-DEATH-STAR
+        USERDOMAIN_ROAMINGPROFILE=THE-DEATH-STAR
+        USERNAME=sokol
+        USERPROFILE=C:\Users\sokol
+        VBOX_MSI_INSTALL_PATH=C:\Program Files\Oracle\VirtualBox\
+        VSCODE_GIT_ASKPASS_EXTRA_ARGS=
+        VSCODE_GIT_ASKPASS_MAIN=c:\Users\sokol\AppData\Roaming\Code\User\globalStorage\vscode.git\askpass\70789581cae28aa7\askpass-main.js
+        VSCODE_GIT_ASKPASS_NODE=C:\Users\sokol\AppData\Local\Programs\Microsoft VS Code\Code.exe
+        VSCODE_GIT_IPC_HANDLE=\\.\pipe\vscode-git-aa7a4cfb8d-sock
+        VSCODE_NONCE=23ed2c1f-9156-4f84-8981-7dc03e74481c
+        WINDIR=C:\WINDOWS
+        _=C:/WINDOWS/System32/WindowsPowerShell/v1.0/powershell
+        _NT_SYMBOL_PATH=srv*C:\Users\sokol\AppData\Local\Temp\symcache*https://msdl.microsoft.com/download/symbols
+===== !handle 0 1
+Handle 4
+  Type         	Event
+Handle 8
+  Type         	Event
+Handle c
+  Type         	Key
+Handle 10
+  Type         	WaitCompletionPacket
+Handle 14
+  Type         	IRTimer
+Handle 18
+  Type         	TpWorkerFactory
+Handle 1c
+  Type         	IoCompletion
+Handle 20
+  Type         	IRTimer
+Handle 24
+  Type         	WaitCompletionPacket
+Handle 28
+  Type         	Event
+Handle 2c
+  Type         	WaitCompletionPacket
+Handle 30
+  Type         	Event
+Handle 34
+  Type         	WaitCompletionPacket
+Handle 4c
+  Type         	Directory
+Handle 50
+  Type         	Event
+Handle 54
+  Type         	Event
+Handle 58
+  Type         	File
+Handle 5c
+  Type         	SchedulerSharedData
+Handle 60
+  Type         	File
+Handle 64
+  Type         	File
+Handle 68
+  Type         	ALPC Port
+Handle 6c
+  Type         	File
+Handle 70
+  Type         	File
+Handle 74
+  Type         	File
+Handle 80
+  Type         	Mutant
+Handle 84
+  Type         	Directory
+Handle 88
+  Type         	Semaphore
+Handle 8c
+  Type         	Semaphore
+Handle 9c
+  Type         	IoCompletion
+Handle a0
+  Type         	TpWorkerFactory
+Handle a4
+  Type         	IRTimer
+Handle a8
+  Type         	WaitCompletionPacket
+Handle ac
+  Type         	IRTimer
+Handle b0
+  Type         	WaitCompletionPacket
+Handle b4
+  Type         	Key
+Handle b8
+  Type         	Thread
+Handle c0
+  Type         	Mutant
+Handle c4
+  Type         	Key
+Handle c8
+  Type         	Key
+Handle cc
+  Type         	Key
+Handle d4
+  Type         	Key
+Handle d8
+  Type         	Key
+Handle dc
+  Type         	Event
+Handle e0
+  Type         	Key
+Handle e4
+  Type         	Key
+Handle e8
+  Type         	Event
+Handle f8
+  Type         	Event
+Handle fc
+  Type         	Event
+Handle 100
+  Type         	Event
+Handle 104
+  Type         	Event
+Handle 108
+  Type         	Event
+Handle 10c
+  Type         	Event
+Handle 144
+  Type         	Semaphore
+Handle 148
+  Type         	Semaphore
+Handle 150
+  Type         	File
+Handle 154
+  Type         	File
+Handle 158
+  Type         	Key
+Handle 16c
+  Type         	Process
+Handle 17c
+  Type         	Key
+59 Handles
+Type           	Count
+None           	5
+Event          	14
+File           	8
+Directory      	2
+Mutant         	2
+Semaphore      	4
+Key            	11
+Process        	1
+Thread         	1
+IoCompletion   	2
+TpWorkerFactory	2
+ALPC Port      	1
+WaitCompletionPacket	6
+===== !handle 0 f File
+Handle 58
+  Type         	File
+  Attributes   	0
+  GrantedAccess	0x100020:
+         Synch
+         Execute/Traverse
+  HandleCount  	2
+  PointerCount 	65535
+  No Object Specific Information available
+Handle 60
+  Type         	File
+  Attributes   	0
+  GrantedAccess	0x12019f:
+         ReadControl,Synch
+         Read/List,Write/Add,Append/SubDir/CreatePipe,ReadEA,WriteEA,ReadAttr,WriteAttr
+  HandleCount  	2
+  PointerCount 	65507
+  No Object Specific Information available
+Handle 64
+  Type         	File
+  Attributes   	0
+  GrantedAccess	0x12019f:
+         ReadControl,Synch
+         Read/List,Write/Add,Append/SubDir/CreatePipe,ReadEA,WriteEA,ReadAttr,WriteAttr
+  HandleCount  	3
+  PointerCount 	98304
+  No Object Specific Information available
+Handle 6c
+  Type         	File
+  Attributes   	0
+  GrantedAccess	0x12019f:
+         ReadControl,Synch
+         Read/List,Write/Add,Append/SubDir/CreatePipe,ReadEA,WriteEA,ReadAttr,WriteAttr
+  HandleCount  	3
+  PointerCount 	98298
+  No Object Specific Information available
+Handle 70
+  Type         	File
+  Attributes   	0
+  GrantedAccess	0x120196:
+         ReadControl,Synch
+         Write/Add,Append/SubDir/CreatePipe,WriteEA,ReadAttr,WriteAttr
+  HandleCount  	3
+  PointerCount 	98233
+  No Object Specific Information available
+Handle 74
+  Type         	File
+  Attributes   	0
+  GrantedAccess	0x12019f:
+         ReadControl,Synch
+         Read/List,Write/Add,Append/SubDir/CreatePipe,ReadEA,WriteEA,ReadAttr,WriteAttr
+  HandleCount  	5
+  PointerCount 	98305
+  No Object Specific Information available
+Handle 150
+  Type         	File
+  Attributes   	0
+  GrantedAccess	0x12019f:
+         ReadControl,Synch
+         Read/List,Write/Add,Append/SubDir/CreatePipe,ReadEA,WriteEA,ReadAttr,WriteAttr
+  HandleCount  	5
+  PointerCount 	98305
+  No Object Specific Information available
+Handle 154
+  Type         	File
+  Attributes   	0
+  GrantedAccess	0x120196:
+         ReadControl,Synch
+         Write/Add,Append/SubDir/CreatePipe,WriteEA,ReadAttr,WriteAttr
+  HandleCount  	3
+  PointerCount 	32772
+  No Object Specific Information available
+8 handles of type File
+quit:
+NatVis script unloaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2611.4001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\atlmfc.natvis'
+NatVis script unloaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2611.4001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\concurrency.natvis'
+NatVis script unloaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2611.4001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\cpp_rest.natvis'
+NatVis script unloaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2611.4001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\ObjectiveC.natvis'
+NatVis script unloaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2611.4001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\stl.natvis'
+NatVis script unloaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2611.4001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\Windows.Data.Json.natvis'
+NatVis script unloaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2611.4001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\Windows.Devices.Geolocation.natvis'
+NatVis script unloaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2611.4001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\Windows.Devices.Sensors.natvis'
+NatVis script unloaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2611.4001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\Windows.Media.natvis'
+NatVis script unloaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2611.4001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\windows.natvis'
+NatVis script unloaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2611.4001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\winrt.natvis'

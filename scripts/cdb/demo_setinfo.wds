@@ -1,0 +1,2 @@
+.if (dwo(@rsp+0x28) != 0n14) { .printf "SC| NtSetInformationFile  h=%p class=%d\n", @rcx, dwo(@rsp+0x28) }
+gc

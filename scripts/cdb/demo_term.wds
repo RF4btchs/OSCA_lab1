@@ -1,0 +1,2 @@
+.printf "SC| NtTerminateProcess    h=%p status=%x\n", @rcx, @edx
+gc

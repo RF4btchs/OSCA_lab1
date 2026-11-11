@@ -1,0 +1,8 @@
+$$ main trace script: breakpoints on every ntdll syscall stub
+sxn ld
+sxn ud
+$$<@@DIR@@/bps.wds
+.printf "TRACE|begin\n"
+g
+.printf "TRACE|end\n"
+q

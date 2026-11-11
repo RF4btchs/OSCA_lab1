@@ -1,0 +1,8 @@
+$$ demo: key syscalls of cmd.exe printed live (screenshot / defence). Copied to %TEMP% by run_trace.ps1
+sxn ld
+bp ntdll!NtCreateFile "$$<@@DIR@@/demo_create.wds"
+bp ntdll!NtWriteFile "$$<@@DIR@@/demo_write.wds"
+bp ntdll!NtSetInformationFile "$$<@@DIR@@/demo_setinfo.wds"
+bp ntdll!NtCreateUserProcess "$$<@@DIR@@/demo_proc.wds"
+bp ntdll!NtTerminateProcess "$$<@@DIR@@/demo_term.wds"
+g

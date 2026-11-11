@@ -1,0 +1,94 @@
+﻿# handle64.exe -a -p 21140   (cmd.exe /c "(echo held by cmd.exe & ping -n 9 127.0.0.1 >nul) > held.txt")
+# дочерний процесс: PING.EXE PID=15928 ping  -n 9 127.0.0.1 
+
+    4: Event         
+    8: Event         
+    C: Key           HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options
+   10: WaitCompletionPacket 
+   14: IRTimer       
+   18: TpWorkerFactory 
+   1C: IoCompletion  
+   20: IRTimer       
+   24: WaitCompletionPacket 
+   28: Event         
+   2C: WaitCompletionPacket 
+   30: Event         
+   34: WaitCompletionPacket 
+   38: <Unknown type> 
+   3C: <Unknown type> 
+   40: <Unknown type> 
+   44: <Unknown type> 
+   48: <Unknown type> 
+   4C: Directory     \KnownDlls
+   50: Event         
+   54: Event         
+   58: File          C:\Users\sokol\AppData\Local\Temp\lab1_handles
+   5C: SchedulerSharedData 
+   60: File          \Device\ConDrv
+   64: File          \Device\ConDrv
+   68: ALPC Port     
+   6C: File          \Device\ConDrv
+   70: File          \Device\Null
+   74: File          \Device\ConDrv
+   78: <Unknown type> 
+   7C: <Unknown type> 
+   80: Mutant        \Sessions\2\BaseNamedObjects\SM0:21140:304:WilStaging_02
+   84: Directory     \Sessions\2\BaseNamedObjects
+   88: Semaphore     \Sessions\2\BaseNamedObjects\SM0:21140:304:WilStaging_02_p0
+   8C: Semaphore     \Sessions\2\BaseNamedObjects\SM0:21140:304:WilStaging_02_p0h
+   90: <Unknown type> 
+   94: <Unknown type> 
+   98: <Unknown type> 
+   9C: IoCompletion  
+   A0: TpWorkerFactory 
+   A4: IRTimer       
+   A8: WaitCompletionPacket 
+   AC: IRTimer       
+   B0: WaitCompletionPacket 
+   B4: Key           HKLM\SYSTEM\ControlSet001\Control\Nls\Sorting\Versions
+   B8: Thread        cmd.exe(21140): 28888
+   BC: <Unknown type> 
+   C0: Mutant        \Sessions\2\BaseNamedObjects\SM0:21140:120:WilError_03
+   C4: Key           HKCU
+   C8: Key           HKLM
+   CC: Key           HKLM\SYSTEM\ControlSet001\Control\Session Manager
+   D0: <Unknown type> 
+   D4: Key           HKLM
+   D8: Key           HKLM\SOFTWARE\Microsoft\Ole
+   DC: Event         
+   E0: Key           HKCU\Local Settings\Software\Microsoft
+   E4: Key           HKCU\Local Settings
+   E8: Event         
+   EC: <Unknown type> 
+   F0: <Unknown type> 
+   F4: <Unknown type> 
+   F8: Event         
+   FC: Event         
+  100: Event         
+  104: Event         
+  108: Event         
+  10C: Event         
+  110: <Unknown type> 
+  114: <Unknown type> 
+  118: <Unknown type> 
+  11C: <Unknown type> 
+  120: <Unknown type> 
+  124: <Unknown type> 
+  128: <Unknown type> 
+  12C: <Unknown type> 
+  130: <Unknown type> 
+  134: <Unknown type> 
+  138: <Unknown type> 
+  13C: <Unknown type> 
+  140: <Unknown type> 
+  144: Semaphore     \Sessions\2\BaseNamedObjects\SM0:21140:120:WilError_03_p0
+  148: Semaphore     \Sessions\2\BaseNamedObjects\SM0:21140:120:WilError_03_p0h
+  150: File          \Device\ConDrv
+  154: File          C:\Users\sokol\AppData\Local\Temp\lab1_handles\held.txt
+  158: Key           HKLM\SYSTEM\ControlSet001\Control\Nls\Sorting\Ids
+  15C: <Unknown type> 
+  160: <Unknown type> 
+  164: <Unknown type> 
+  16C: Process       PING.EXE(15928)
+  178: <Unknown type> 
+  17C: Key           HKCU\Software\Microsoft\Windows NT\CurrentVersion
